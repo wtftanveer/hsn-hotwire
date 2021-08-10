@@ -53,9 +53,9 @@ Citizen.CreateThread(function()
                 if Keys[Plate] ~= true then
                     wait = 2
                     if SearchedVeh[Plate] ~= true then
-                        text = '~y~[H]~s~ Straight Contact | ~g~[Z]~s~ Search'
+                        text = '~y~[H]~s~ Hotwire | ~g~[Z]~s~ Search'
                     else
-                        text = '~y~[H]~s~ Straight Contact'
+                        text = '~y~[H]~s~ Hotwire'
                     end
                     if IsControlJustPressed(1, 74) then--H
                         ESX.TriggerServerCallback('hsn-hotwire:lockpick', function(data)
@@ -77,7 +77,7 @@ Citizen.CreateThread(function()
 									SetVehicleEngineOn(vehicle,true)
 									exports['mythic_notify']:SendAlert('inform', 'You have successfully started the vehicle!')
 								else
-									exports['mythic_notify']:SendAlert('inform', 'You failed to make straight contacts!')
+									exports['mythic_notify']:SendAlert('inform', 'You failed to hotwire!')
 								end    
 							end
 						})
