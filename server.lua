@@ -41,7 +41,7 @@ AddEventHandler('hsn-hotwire:server:SearchVeh',function(plate)
             TriggerClientEvent('mythic_notify:client:SendAlert', src, { type = 'inform', text = 'You found 1 pistol in the vehicle.'} )
         elseif luck == 4 then
             xPlayer.addMoney(money)
-            TriggerClientEvent('mythic_notify:client:SendAlert', src, { type = 'inform', text = 'in the vehicle '..money..'$ you found it.'} )
+            TriggerClientEvent('mythic_notify:client:SendAlert', src, { type = 'inform', text = 'You found $'..money..'.'} )
         end
     else
         TriggerClientEvent('mythic_notify:client:SendAlert', src, { type = 'inform', text = plate..' The glove box of the vehicle has already been searched'} )
