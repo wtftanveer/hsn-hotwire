@@ -26,22 +26,6 @@ AddEventHandler('hsn-hotwire:client:removeKeys',function(plate)
     Keys[plate] = nil
 end)
 
-function DrawText3Ds(x,y,z, text)
-    local onScreen,_x,_y=World3dToScreen2d(x,y,z)
-    local px,py,pz=table.unpack(GetGameplayCamCoords())
-    SetTextScale(0.35, 0.35)
-    SetTextFont(4)
-    SetTextProportional(1)
-    SetTextColour(255, 255, 255, 215)
-    SetTextEntry("STRING")
-    SetTextCentre(1)
-    AddTextComponentString(text)
-    DrawText(_x,_y)
-    local factor = (string.len(text)) / 370
-	DrawRect(_x,_y+0.0125, 0.015+ factor, 0.03, 41, 11, 41, 68)
-	ClearDrawOrigin()
-end
-
 Citizen.CreateThread(function()
     while true do
         local wait = 1000
@@ -53,9 +37,11 @@ Citizen.CreateThread(function()
                 if Keys[Plate] ~= true then
                     wait = 2
                     if SearchedVeh[Plate] ~= true then
-                        text = '~y~[H]~s~ Hotwire | ~g~[Z]~s~ Search'
+			--TriggerEvent('luke_textui:ShowUI', '<h4>[H] Hotwire | [Z] Search</h4>', 'rgb(45, 52, 54)')
+			TriggerEvent('cd_drawtextui:ShowUI', 'show', '[H] Hotwire | [Z] Search')
                     else
-                        text = '~y~[H]~s~ Hotwire'
+			--TriggerEvent('luke_textui:ShowUI', '<h4>[H] Hotwire</h4>', 'rgb(45, 52, 54)')
+			TriggerEvent('cd_drawtextui:ShowUI', 'show', '[H] Hotwire')
                     end
                     if IsControlJustPressed(1, 74) then--H
                         ESX.TriggerServerCallback('hsn-hotwire:lockpick', function(data)
@@ -93,7 +79,26 @@ Citizen.CreateThread(function()
                             SearchVehicle(Plate)
                         end
                     end
-                    DrawText3Ds(vehicleCoords.x,vehicleCoords.y,vehicleCoords.z,text)
+                end
+            end
+        end
+        Citizen.Wait(wait)  
+    end
+end)
+
+Citizen.CreateThread(function()
+    while true do
+        local wait = 1000
+        if IsPedInAnyVehicle(PlayerPedId(),false)  then
+            local vehicle = GetVehiclePedIsIn(PlayerPedId())
+            local Plate = GetVehicleNumberPlateText(vehicle)
+            if GetPedInVehicleSeat(GetVehiclePedIsIn(PlayerPedId(), false), -1) == PlayerPedId() then
+                if Keys[Plate] == true then
+                    wait = 2
+                        if SetVehicleEngineOn(vehicle, true) then
+                            --TriggerEvent('luke_textui:HideUI')
+			    TriggerEvent('cd_drawtextui:HideUI')
+                        end
                 end
             end
         end
