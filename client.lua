@@ -146,7 +146,7 @@ SearchVehicle = function(plate)
 			flag = 49, 
 		},
 		DisableControls = {
-			Mouse = true,
+			Mouse = false,
 			Player = true,
 			Vehicle = true,
 		},     
@@ -208,7 +208,7 @@ Citizen.CreateThread(function()
 					Easing = "easeLinear",
 					Label = "Getting Key...",
 					DisableControls = {
-						Mouse = true,
+						Mouse = false,
 						Player = true,
 						Vehicle = true,
 					},    
