@@ -66,8 +66,13 @@ Citizen.CreateThread(function()
 							Easing = "easeLinear",
 							Color = "rgba(255, 255, 255, 1.0)",
 							BGColor = "rgba(0, 0, 0, 0.4)",
+							Animation = {
+								animationDictionary = "mini@repair",
+								animationName = "fixing_a_player",
+								flag = 49, 
+							},
 							DisableControls = {
-								Mouse = true,
+								Mouse = false,
 								Player = true,
 								Vehicle = true,
 							}, 
@@ -135,11 +140,16 @@ SearchVehicle = function(plate)
 		Duration = 12500,
 		Easing = "easeLinear",
 		Label = "Searching Vehicle...",
+	    	Animation = {
+			animationDictionary = "mini@repair",
+			animationName = "fixing_a_player",
+			flag = 49, 
+		},
 		DisableControls = {
 			Mouse = true,
 			Player = true,
 			Vehicle = true,
-		},    
+		},     
     onComplete = function()
         TriggerServerEvent('hsn-hotwire:server:SearchVeh', plate)
     end
