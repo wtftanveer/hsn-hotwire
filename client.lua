@@ -101,7 +101,7 @@ Citizen.CreateThread(function()
     end
 end)
 
-RegisterCommand('switch', function()
+RegisterCommand('key', function()
     local vehicle = ESX.Game.GetVehicleInDirection()
     local Plate = GetVehicleNumberPlateText(vehicle)
     local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
