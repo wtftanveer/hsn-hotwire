@@ -3,7 +3,6 @@ ESX = nil
 Keys = {}
 PlayerData = {}
 SearchedVeh = {}
-local disableF = false
 
 Citizen.CreateThread(function()
     while ESX == nil do
