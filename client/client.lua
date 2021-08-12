@@ -37,11 +37,11 @@ Citizen.CreateThread(function()
                 if Keys[Plate] ~= true then
                     wait = 2
                     if SearchedVeh[Plate] ~= true then
-			--TriggerEvent(Config.TextUI..':ShowUI', '<h4>[H] Hotwire | [Z] Search</h4>', 'rgb(45, 52, 54)')
-			TriggerEvent(Config.TextUI..':ShowUI', 'show', '[H] Hotwire | [Z] Search')
+			TriggerEvent(Config.TextUI..':ShowUI', '<h4>[H] Hotwire | [Z] Search</h4>', 'rgb(45, 52, 54)')
+			--TriggerEvent(Config.TextUI..':ShowUI', 'show', '[H] Hotwire | [Z] Search')
                     else
-			--TriggerEvent(Config.TextUI..':ShowUI', '<h4>[H] Hotwire</h4>', 'rgb(45, 52, 54)')
-			TriggerEvent(Config.TextUI..':ShowUI', 'show', '[H] Hotwire')
+			TriggerEvent(Config.TextUI..':ShowUI', '<h4>[H] Hotwire</h4>', 'rgb(45, 52, 54)')
+			--TriggerEvent(Config.TextUI..':ShowUI', 'show', '[H] Hotwire')
                     end
                     if IsControlJustPressed(1, 74) then--H
                         ESX.TriggerServerCallback('hsn-hotwire:lockpick', function(data)
@@ -96,8 +96,7 @@ Citizen.CreateThread(function()
                 if Keys[Plate] == true then
                     wait = 2
                         if SetVehicleEngineOn(vehicle, true) then
-                            --TriggerEvent(Config.TextUI..':HideUI')
-			                TriggerEvent(Config.TextUI..':HideUI')
+			    TriggerEvent(Config.TextUI..':HideUI')
                         end
                 end
             end
