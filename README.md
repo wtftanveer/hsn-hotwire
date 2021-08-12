@@ -40,7 +40,6 @@ Then in client/client.lua comment/uncomment the following lines based on what yo
 
 # Work-in-Progress
 * Use of locales
-* Possible use of loaf_keysystem
 
 # Credits:
 [hsnnnnn](https://github.com/hsnnnnn/) for original script.
