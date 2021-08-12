@@ -32,7 +32,6 @@ Citizen.CreateThread(function()
         if IsPedInAnyVehicle(PlayerPedId(),false)  then
             local vehicle = GetVehiclePedIsIn(PlayerPedId())
             local Plate = GetVehicleNumberPlateText(vehicle)
-            local vehicleCoords = GetOffsetFromEntityInWorldCoords(vehicle, 0.0, 1.25, 0.35)
             if GetPedInVehicleSeat(GetVehiclePedIsIn(PlayerPedId(), false), -1) == PlayerPedId() then
                 if Keys[Plate] ~= true then
                     wait = 2
