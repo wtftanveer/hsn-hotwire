@@ -94,7 +94,7 @@ Citizen.CreateThread(function()
                 if Keys[Plate] == true then
                     wait = 2
                         if SetVehicleEngineOn(vehicle, true) then
-			    TriggerEvent(Config.TextUI..':HideUI')
+                            TriggerEvent(Config.TextUI..':HideUI')
                         end
                 end
             end
