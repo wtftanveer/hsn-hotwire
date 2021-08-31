@@ -79,7 +79,9 @@ Citizen.CreateThread(function()
                     end
                 end
             end
-        end
+        else 
+		TriggerEvent(Config.TextUI..':HideUI')
+		end
         Citizen.Wait(wait)  
     end
 end)
