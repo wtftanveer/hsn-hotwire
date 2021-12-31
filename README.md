@@ -43,3 +43,5 @@ Then in client/client.lua comment/uncomment the following lines based on what yo
 
 # Credits:
 [hsnnnnn](https://github.com/hsnnnnn/) for original script.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P57KRR9)
