@@ -1,3 +1,5 @@
+# UNMAINTAINED | NOT SUPPORTED
+
 # hsn-hotwire
 Basic hotwiring script for breaking into cars you do not own.
 
@@ -37,9 +39,6 @@ Then in client/client.lua comment/uncomment the following lines based on what yo
 * rprogress [Link](https://github.com/Mobius1/rprogress)
 * ESX Legacy [Link](https://github.com/thelindat/es_extended)
 * luke_textui [Link](https://forum.cfx.re/t/release-standalone-free-text-ui/3987367) **or** cd_drawtextui [Link](https://forum.cfx.re/t/free-release-draw-text-ui/1885313)
-
-# Work-in-Progress
-* Use of locales
 
 # Credits:
 [hsnnnnn](https://github.com/hsnnnnn/) for original script.
